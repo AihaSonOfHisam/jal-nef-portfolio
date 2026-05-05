@@ -20,7 +20,7 @@ export default function HomePage() {
         className="mx-auto max-w-[1400px] px-6 py-16 text-center text-white/70"
       >
         <p className="text-lg font-medium">Contact</p>
-        <p className="mt-3">aizalhaziq003@gmail.com</p>
+        <p className="mt-3">aizalhaziq00@gmail.com</p>
         <div className="mt-4 flex justify-center gap-6 text-sm">
           <a href="https://instagram.com/jal.nef" target="_blank" rel="noreferrer">Instagram</a>
           <a href="https://tiktok.com/@jal.nef" target="_blank" rel="noreferrer">TikTok</a>
