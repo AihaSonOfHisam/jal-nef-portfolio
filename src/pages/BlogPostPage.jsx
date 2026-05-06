@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { blogPosts } from "../data/blogData";
+import PageLogo from "../components/PageLogo";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -10,6 +11,7 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen bg-[#1f1f1f] text-white">
         <Sidebar />
+        <PageLogo />
 
         <main className="px-5 py-10 md:ml-[220px] md:px-14 md:py-16">
           <h1 className="text-3xl font-semibold">Post not found</h1>
@@ -25,7 +27,7 @@ export default function BlogPostPage() {
     <div className="min-h-screen bg-[#1f1f1f] text-white">
       <Sidebar />
 
-      <div className="sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-[#1f1f1f]/95 px-5 py-4 backdrop-blur md:hidden">
+      {/* <div className="sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-[#1f1f1f]/95 px-5 py-4 backdrop-blur md:hidden">
         <Link to="/" className="text-xl font-semibold tracking-tight">
           jal.nef
         </Link>
@@ -34,7 +36,7 @@ export default function BlogPostPage() {
           <Link to="/">Work</Link>
           <Link to="/blog">Blog</Link>
         </div>
-      </div>
+      </div> */}
 
       <main className="px-5 py-10 md:ml-[220px] md:px-14 md:py-16">
         <article className="mx-auto max-w-3xl">

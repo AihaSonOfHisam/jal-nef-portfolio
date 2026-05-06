@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import CollageGrid from "../components/CollageGrid";
 import { categories } from "../data/galleryData";
+import PageLogo from "../components/PageLogo";
 
 export default function CategoryPage() {
   const { slug } = useParams();
@@ -11,6 +12,7 @@ export default function CategoryPage() {
     return (
       <div className="min-h-screen bg-[#1f1f1f] text-white">
         <Sidebar />
+        <PageLogo />
 
         <main className="px-5 py-24 md:px-14">
           <h1 className="text-3xl font-bold">Category not found</h1>

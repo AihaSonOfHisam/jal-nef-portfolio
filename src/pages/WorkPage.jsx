@@ -1,11 +1,13 @@
 import Sidebar from "../components/Sidebar";
 import CategoryCard from "../components/CategoryCard";
 import { categories } from "../data/galleryData";
+import PageLogo from "../components/PageLogo";
 
 export default function WorkPage() {
   return (
     <div className="min-h-screen bg-[#1f1f1f] text-white">
       <Sidebar />
+      <PageLogo />
 
       <main className="px-3 py-24 md:px-6">
         <div className="mx-auto mb-10 max-w-[1400px] px-1 text-center">

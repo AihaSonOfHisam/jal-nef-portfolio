@@ -9,10 +9,10 @@ export default function LandingPage() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/images/landing/cover.png"
-          alt="jal.nef landing"
-          className="h-full w-full object-cover opacity-75"
-        />
+  src="/images/landing/cover.png"
+  alt="jal.nef landing"
+  className="h-full w-full object-cover object-[42%_center] opacity-80 md:object-center"
+/>
         {/* <div className="absolute inset-0 bg-black/25" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-black/55" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-black/20" /> */}
