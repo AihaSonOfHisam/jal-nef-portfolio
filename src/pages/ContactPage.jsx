@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import PageLogo from "../components/PageLogo";
+import PageLoader from "../components/PageLoader";
 
 export default function ContactPage() {
   const [status, setStatus] = useState("");
@@ -34,6 +35,7 @@ export default function ContactPage() {
   }
 
   return (
+    <PageLoader delay={600} fadeDuration={500}>
     <div className="min-h-screen bg-[#1f1f1f] text-white">
       <Sidebar />
       <PageLogo />
@@ -162,5 +164,6 @@ export default function ContactPage() {
         </section>
       </main>
     </div>
+    </PageLoader>
   );
 }

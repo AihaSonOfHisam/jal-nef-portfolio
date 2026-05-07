@@ -2,11 +2,13 @@ import Sidebar from "../components/Sidebar";
 import CategoryCard from "../components/CategoryCard";
 import { categories } from "../data/galleryData";
 import PageLogo from "../components/PageLogo";
+import PageLoader from "../components/PageLoader";
 
 export default function WorkPage() {
   return (
-    <div className="min-h-screen bg-[#1f1f1f] text-white">
-      <Sidebar />
+    <PageLoader delay={600} fadeDuration={500}>
+      <div className="min-h-screen bg-[#1f1f1f] text-white">
+        <Sidebar />
       <PageLogo />
 
       <main className="px-3 py-24 md:px-6">
@@ -26,5 +28,6 @@ export default function WorkPage() {
         </div>
       </main>
     </div>
+    </PageLoader>
   );
 }

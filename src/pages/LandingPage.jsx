@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import PageLoader from "../components/PageLoader";
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#111] text-white">
-      <Sidebar />
+    <PageLoader delay={1000} fadeDuration={800}>
+      <div className="relative min-h-screen overflow-hidden bg-[#111] text-white">
+        <Sidebar />
 
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-  src="/images/landing/cover.png"
-  alt="jal.nef landing"
-  className="h-full w-full object-cover object-[42%_center] opacity-80 md:object-center"
-/>
+          src="/images/landing/cover.jpg"
+          alt="jal.nef landing"
+          className="h-full w-full object-cover object-[42%_center] opacity-80 md:object-center"
+        />
         {/* <div className="absolute inset-0 bg-black/25" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-black/55" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-black/20" /> */}
@@ -58,5 +60,6 @@ export default function LandingPage() {
         <p>Motorsports / Wildlife / Astro / Film</p>
       </div>
     </div>
+    </PageLoader>
   );
 }

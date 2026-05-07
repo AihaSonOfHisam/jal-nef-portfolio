@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import CollageGrid from "../components/CollageGrid";
 import { categories } from "../data/galleryData";
 import PageLogo from "../components/PageLogo";
+import PageLoader from "../components/PageLoader";
 
 export default function CategoryPage() {
   const { slug } = useParams();
@@ -25,6 +26,7 @@ export default function CategoryPage() {
   }
 
   return (
+    <PageLoader delay={600} fadeDuration={500}>
     <div className="min-h-screen bg-[#1f1f1f] text-white">
       <Sidebar />
 
@@ -51,5 +53,6 @@ export default function CategoryPage() {
         </div>
       </main>
     </div>
+    </PageLoader>
   );
 }
