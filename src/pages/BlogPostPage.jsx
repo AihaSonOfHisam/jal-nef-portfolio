@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { blogPosts } from "../data/blogData";
 import PageLogo from "../components/PageLogo";
+import PageLoader from "../components/PageLoader";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -9,56 +10,86 @@ export default function BlogPostPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#1f1f1f] text-white">
-        <Sidebar />
-        <PageLogo />
+      <PageLoader delay={500} fadeDuration={500}>
+        <div className="min-h-screen bg-[#1f1f1f] text-white">
+          <Sidebar />
+          <PageLogo />
 
-        <main className="px-5 py-10 md:ml-[220px] md:px-14 md:py-16">
-          <h1 className="text-3xl font-semibold">Post not found</h1>
-          <Link to="/blog" className="mt-6 inline-block text-white/60 underline">
-            Back to blog
-          </Link>
-        </main>
-      </div>
+          <main className="px-5 pt-28 pb-16 md:px-14 md:pt-32 md:pb-20">
+            <div className="mx-auto max-w-3xl">
+              <h1 className="text-3xl font-semibold">Post not found</h1>
+
+              <Link
+                to="/blog"
+                className="mt-6 inline-block text-white/60 underline"
+              >
+                Back to blog
+              </Link>
+            </div>
+          </main>
+        </div>
+      </PageLoader>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#1f1f1f] text-white">
-      <Sidebar />
+    <PageLoader delay={600} fadeDuration={500}>
+      <div className="min-h-screen bg-[#1f1f1f] text-white">
+        <Sidebar />
+        <PageLogo />
 
-      {/* <div className="sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-[#1f1f1f]/95 px-5 py-4 backdrop-blur md:hidden">
-        <Link to="/" className="text-xl font-semibold tracking-tight">
-          jal.nef
-        </Link>
+        <main className="px-5 pt-28 pb-16 md:px-14 md:pt-32 md:pb-20">
+          <article className="mx-auto max-w-3xl">
+            <Link
+              to="/blog"
+              className="text-sm text-white/45 transition hover:text-white"
+            >
+              ← Back to Blog
+            </Link>
 
-        <div className="flex gap-4 text-xs uppercase tracking-[0.18em] text-white/60">
-          <Link to="/">Work</Link>
-          <Link to="/blog">Blog</Link>
-        </div>
-      </div> */}
+            <p className="mt-10 text-xs uppercase tracking-[0.25em] text-white/35">
+              {post.date}
+            </p>
 
-      <main className="px-5 py-10 md:ml-[220px] md:px-14 md:py-16">
-        <article className="mx-auto max-w-3xl">
-          <Link to="/blog" className="text-sm text-white/45 hover:text-white">
-            ← Back to Blog
-          </Link>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+              {post.title}
+            </h1>
 
-          <p className="mt-10 text-xs uppercase tracking-[0.25em] text-white/35">
-            {post.date}
-          </p>
+            {post.video && (
+              <div className="mt-10 overflow-hidden border border-white/10 bg-black">
+                <video
+                  src={post.video}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full bg-black"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
 
-          <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-            {post.title}
-          </h1>
+            {post.tiktokUrl && (
+  <div className="mt-8">
+    <a
+      href={post.tiktokUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex border border-white/20 px-6 py-3 text-xs uppercase tracking-[0.22em] text-white/60 transition hover:border-white hover:bg-white hover:text-black"
+    >
+      Watch on TikTok
+    </a>
+  </div>
+)}
 
-          <div className="mt-12 space-y-7 text-base leading-8 text-white/65">
-            {post.content.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </article>
-      </main>
-    </div>
+            <div className="mt-12 space-y-7 text-base leading-8 text-white/65">
+              {post.content.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+          </article>
+        </main>
+      </div>
+    </PageLoader>
   );
 }
