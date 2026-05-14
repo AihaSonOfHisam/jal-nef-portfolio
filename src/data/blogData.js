@@ -16,9 +16,9 @@ export const blogPosts = [
 
       "The whole experience felt like a small but meaningful step forward. It was just a simple post-work evening at Putrajaya, but it helped me learn more about my gimbal, my camera lens, and my editing workflow. More importantly, it made me realise that even casual shoots can become useful practice when I approach them with the intention to learn."
     ],
-    video: "/videos/sunset.mov",
     image: "/images/blog/sunset.jpeg",
     tiktokUrl: "https://www.tiktok.com/@jal.nef/video/7639400316382891282",
+    tiktokId: "7639400316382891282",
   },
   {
     slug: "milky-way-shoot",
@@ -30,6 +30,6 @@ export const blogPosts = [
       "Night sky photography feels different because everything slows down. You wait for the sky, the clouds, the moonlight, and the right moment.",
       "For future posts, I can use this section to write about camera settings, location choices, editing process, and what I learned during each shoot.",
     ],
-    image: "/images/milky-way.jpg"
+    image: "/images/Night Sky/1.jpg"
   },
 ];

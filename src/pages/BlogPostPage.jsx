@@ -55,32 +55,51 @@ export default function BlogPostPage() {
               {post.title}
             </h1>
 
-            {post.video && (
-              <div className="mt-10 overflow-hidden border border-white/10 bg-black">
-                <video
-                  src={post.video}
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="w-full bg-black"
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            )}
-
-            {post.tiktokUrl && (
-  <div className="mt-8">
+            {post.image && (
+  post.tiktokUrl ? (
     <a
       href={post.tiktokUrl}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex border border-white/20 px-6 py-3 text-xs uppercase tracking-[0.22em] text-white/60 transition hover:border-white hover:bg-white hover:text-black"
+      className="group mt-10 block overflow-hidden border border-white/10 bg-black"
     >
-      Watch on TikTok
+      <div className="relative aspect-video">
+        <img
+          src={post.image}
+          alt={post.title}
+          className="h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105 group-hover:opacity-50"
+        />
+
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="border border-white/30 bg-black/60 px-6 py-3 text-xs uppercase tracking-[0.25em] text-white transition group-hover:bg-white group-hover:text-black">
+            Watch on TikTok
+          </div>
+        </div>
+      </div>
     </a>
-  </div>
+  ) : (
+    <div className="mt-10 overflow-hidden border border-white/10 bg-black">
+      <img
+        src={post.image}
+        alt={post.title}
+        className="h-auto w-full object-cover"
+      />
+    </div>
+  )
 )}
+
+            {/* {post.tiktokUrl && (
+              <div className="mt-8">
+                <a
+                  href={post.tiktokUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex border border-white/20 px-6 py-3 text-xs uppercase tracking-[0.22em] text-white/60 transition hover:border-white hover:bg-white hover:text-black"
+                >
+                  Watch on TikTok
+                </a>
+              </div>
+            )} */}
 
             <div className="mt-12 space-y-7 text-base leading-8 text-white/65">
               {post.content.map((paragraph, index) => (

@@ -10,7 +10,7 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#1f1f1f] text-white">
       <Sidebar />
       <PageLogo />
-      
+
       <main className="px-5 pt-28 pb-16 md:px-14 md:pt-32 md:pb-20">
         <div className="mx-auto max-w-5xl">
           <p className="text-xs uppercase tracking-[0.35em] text-white/35">
@@ -28,22 +28,22 @@ export default function BlogPage() {
           </p>
 
           <div className="mt-12 space-y-8">
-  {blogPosts.map((post) => (
-    <Link
-      key={post.slug}
-      to={`/blog/${post.slug}`}
-      className="group grid gap-5 border-b border-white/10 pb-8 transition hover:border-white/30 md:grid-cols-[220px_1fr]"
-    >
-      {post.image && (
-        <div className="aspect-[4/3] overflow-hidden bg-neutral-900">
-          <img
-            src={post.image}
-            alt={post.title}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-105 group-hover:opacity-80"
-            loading="lazy"
-          />
-        </div>
-      )}
+        {blogPosts.map((post) => (
+          <Link
+            key={post.slug}
+            to={`/blog/${post.slug}`}
+            className="group grid gap-5 border-b border-white/10 pb-8 transition hover:border-white/30 md:grid-cols-[220px_1fr]"
+          >
+            {post.image && (
+              <div className="aspect-[4/3] overflow-hidden bg-neutral-900">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105 group-hover:opacity-80"
+                  loading="lazy"
+                />
+              </div>
+            )}
 
       <div>
         <p className="text-xs uppercase tracking-[0.25em] text-white/35">
